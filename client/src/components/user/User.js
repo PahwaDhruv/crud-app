@@ -12,22 +12,6 @@ class User extends Component{
         };
     }
 
-    // handleChange = (event) => {
-    //     const name=event.target.name;
-    //     const value=event.target.value;
-    //     const state=this.state.user
-    //     state[name] = value
-    //     this.setState({user:state});        
-    // }
-
-    // handleUpdate = () => {
-    //     const user = this.state.user;
-    //     console.log(user);
-    //     this.props.updateUser(user)
-    //     this.setState({
-    //         showEditModal: false
-    //     })
-    // }
 
     handleShowDeleteModal = () =>{
         this.setState({
@@ -41,20 +25,9 @@ class User extends Component{
         });
     }
 
-    // handleShowEditModal = () =>{
-    //     this.setState({
-    //         showEditModal: true
-    //     });
-    // }
-
-    // handleCloseEditModal = () => {
-    //     this.setState({
-    //         showEditModal: false
-    //     });
-    // }
-
     delUser = (id) =>{
         this.props.deleteUser(id)
+        // this.handleCloseDeleteModal();
         // alert(id);
     }
 
@@ -75,7 +48,7 @@ class User extends Component{
                     <Link to={"/edit/"+this.props.user._id} className="btn btn-primary">Edit</Link>
                     </td>
                     {/* <td><Button type="button" variant="primary" onClick={this.handleShowEditModal}>Edit</Button></td> */}
-                    <td><Button type="button" variant="danger" onClick={this.handleShowDeleteModal}>Delete</Button></td>
+                    <td><Button type="button" variant="danger" onClick={() => this.delUser(user._id)}>Delete</Button></td>
                 </tr>
 
 
@@ -98,10 +71,19 @@ class User extends Component{
     }
 }
 
-const mapDispatchToProps = (dispatch) =>{
-    return {
-        deleteUser: (id) => dispatch(deleteUser(id)),
-        updateUser: (user) => dispatch(updateUser(user))
+// const mapDispatchToProps = (dispatch) =>{
+//     return {
+//         deleteUser: (id) => dispatch(deleteUser(id)),
+//         updateUser: (user) => dispatch(updateUser(user))
+//     }
+// }
+
+const mapStateToProps = (state) => {
+    return{
+        users: state.userReduce.users
     }
+    
 }
-export default connect(null, mapDispatchToProps)(User);
+
+export default connect(mapStateToProps, {deleteUser})(User);
+// export default connect(null, mapDispatchToProps)(User);

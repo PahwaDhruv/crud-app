@@ -60,7 +60,7 @@ export const updateUser = (user) => {
     return(dispatch) => {
         axios.put(`/api/users/${user._id}`, user)
             .then(response => {
-                dispatch({type: "UPDATE_USER", payload:user})
+                dispatch({type: "UPDATE_USER", payload:response.data})
                 console.log(response)
             })
             .catch(error => console.log(error));
