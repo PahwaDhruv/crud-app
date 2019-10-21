@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 const db =require("./config/keys").mongoURL;
 
 mongoose.connect(db,{ useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => console.log("Connected"))
+    .then(() => console.log("DB Connected"))
     .catch(error => console.log(error));
 
 //Use Routes

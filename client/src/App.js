@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header/Header';
-import Home from './components/home/Home';
+import UserList from './components/userList/UserList';
 import AddUser from './components/addUser/AddUser';
 import EditUser from './components/editUser/EditUser';
 import {Route, Switch} from 'react-router-dom';
@@ -18,7 +18,7 @@ class App extends Component {
       <div>
         <Header></Header>
         <Switch>
-          <Route path="/" exact component={Home}></Route>
+          <Route path="/" exact component={UserList}></Route>
           <Route path="/add" component={AddUser}></Route>
           <Route path="/edit/:id" component={ EditUser } ></Route>
           <Route path="/about" component={About}></Route>

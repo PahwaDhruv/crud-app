@@ -71,19 +71,12 @@ class User extends Component{
     }
 }
 
-// const mapDispatchToProps = (dispatch) =>{
-//     return {
-//         deleteUser: (id) => dispatch(deleteUser(id)),
-//         updateUser: (user) => dispatch(updateUser(user))
-//     }
-// }
-
-const mapStateToProps = (state) => {
-    return{
-        users: state.userReduce.users
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        deleteUser: (id) => dispatch(deleteUser(id)),
+        updateUser: (user) => dispatch(updateUser(user))
     }
-    
 }
 
-export default connect(mapStateToProps, {deleteUser})(User);
-// export default connect(null, mapDispatchToProps)(User);
+
+export default connect(null, mapDispatchToProps)(User);
