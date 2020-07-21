@@ -11,7 +11,10 @@ class UserList extends Component{
     componentDidMount(){
         this.props.getUsers();
     }
-
+    
+    componentDidUpdate(){
+        this.props.getUsers();
+    }
 
     delUser = (id) =>{
         this.props.deleteUser(id)
@@ -41,7 +44,7 @@ class UserList extends Component{
                     {
                         users && users.map((user,index) => (
                             // <User key={index} user={user} index={index}></User>
-                            <tr key={index}>
+                            <tr key={user._id}>
                                 <td>{index+1}</td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
