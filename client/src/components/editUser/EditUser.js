@@ -111,7 +111,7 @@ class EditUser extends Component{
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        updateUser: (id) => (dispatch(updateUser(id)))
+        updateUser: (user) => (dispatch(updateUser(user)))
     }
 }
 export default connect(null,mapDispatchToProps)(EditUser);
