@@ -12,25 +12,28 @@ class Header extends Component{
 
     render(){
         return(
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand>
+            <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
+                <Navbar.Brand as={Link} to="/">
                     <img src={logo} alt="React logo" width="50" height="50" className="d-inline-block" />
                     {"CRUD APP"}
                 </Navbar.Brand>
-                <Nav>
-                    <Nav.Link as={Link} to="/">
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link as={Link} to="/" href="/">
                     Home
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/add">
+                    <Nav.Link as={Link} to="/add" href="/add">
                     Add
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/about">
+                    <Nav.Link as={Link} to="/about" href="/about">
                         About
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/contact">
+                    <Nav.Link as={Link} to="/contact" href="/about">
                         Contact
                     </Nav.Link>
                 </Nav>
+                </Navbar.Collapse>
             </Navbar>
         );
         
