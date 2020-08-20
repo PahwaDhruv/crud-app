@@ -29,7 +29,7 @@ class Header extends Component{
                     <Nav.Link as={Link} to="/about" href="/about">
                         About
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/contact" href="/about">
+                    <Nav.Link as={Link} to="/contact" href="/contact">
                         Contact
                     </Nav.Link>
                 </Nav>
