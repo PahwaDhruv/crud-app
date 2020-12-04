@@ -1,7 +1,6 @@
 // import uuid from 'uuid';
 const initState={
     users: [],
-    user: {},
     loading: false
 };
 
@@ -33,7 +32,15 @@ const userReducer = (state=initState, action) => {
         case "UPDATE_USER":
             return{
                 ...state,
-                user: action.payload
+                users: state.users.map(user => user._id === action.payload._id ? {
+                    ...user,
+                    name : action.payload.name,
+                    email : action.payload.email,
+                    mobile : action.payload.mobile,
+                    sex : action.payload.sex,
+                    city : action.payload.city
+                } : user
+              )
             }
         default:
             return state;
