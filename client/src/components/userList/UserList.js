@@ -12,9 +12,9 @@ class UserList extends Component{
         this.props.getUsers();
     }
     
-//     componentDidUpdate(){
-//         this.props.getUsers();
-//     }
+    componentDidUpdate(){
+        this.props.getUsers();
+    }
 
     delUser = (id) =>{
         this.props.deleteUser(id)
