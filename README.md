@@ -6,4 +6,5 @@
     - npm install
   * Go back to root folder - cd ..
   * Type - npm run dev
+  
 View DEMO : https://powerful-river-79194.herokuapp.com/
